@@ -86,6 +86,9 @@
     <ClInclude Include="DLLUI_ExtraCompInfo.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="DLLPluginInterface.h">
+      <Filter>ExportFUN</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ComponentExtraInfo.rc">

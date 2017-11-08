@@ -6,16 +6,16 @@
 #include "afxwin.h"
 #include "..\ComponentExtraInfo\DLGUIData.h"
 #include "..\ComponentExtraInfo\TIDLLUIPlugin.h"
-#include "TemplateDLLLoader.h"
 
-typedef IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>  MyDLLType;
+typedef UIDLL_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>  MyDLLType;
 
-typedef IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData> *(*PluginCreateor)();
-typedef DLLLoader<IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>*, PluginCreateor> MyDLLLoader;
-
-
+// 
 /*class IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>;*/
 // CMyDLGDlg dialog
+
+class IDLLLoader;
+class IDLLPluginInterface;
+
 class CMyDLGDlg : public CDialogEx
 {
 // Construction
@@ -42,8 +42,9 @@ protected:
 public:
 	afx_msg void OnBnClickedButton1();
 	CStatic m_GroupREct;
-	MyDLLType *_ptr;
-	MyDLLLoader *_DLLCREATOR;
+	IDLLPluginInterface *_ptr;
+	IDLLLoader *_DLLCREATOR;
+	MyDLLType *_ActualMyDLLType;
 	afx_msg void OnClose();
 	afx_msg void OnBnClickedButton2();
 };

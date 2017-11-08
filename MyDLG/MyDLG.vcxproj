@@ -178,6 +178,7 @@
     <None Include="res\MyDLG.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IDLLLoader.h" />
     <ClInclude Include="MyDLG.h" />
     <ClInclude Include="MyDLGDlg.h" />
     <ClInclude Include="Resource.h" />

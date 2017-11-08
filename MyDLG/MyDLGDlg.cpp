@@ -13,6 +13,9 @@
 #endif
 
 
+// 
+
+
 // CAboutDlg dialog used for App About
 
 class CAboutDlg : public CDialogEx
@@ -53,7 +56,7 @@ CMyDLGDlg::CMyDLGDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CMyDLGDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
-	_DLLCREATOR=new DLLLoader<IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>*, PluginCreateor>(CString(_T("ComponentExtraInfo.dll")));
+	_DLLCREATOR=new DLLLoader(CString(_T("ComponentExtraInfo.dll")));
 	_ptr=NULL;
 }
 
@@ -166,14 +169,16 @@ void CMyDLGDlg::OnBnClickedButton1()
 
 
 	_ptr=_DLLCREATOR->GetDLLCLass();
-	if(_ptr)
+	_ActualMyDLLType=dynamic_cast<MyDLLType*>(_ptr);
+
+	if(_ActualMyDLLType)
 	{
 		CRect rect;
-		ExtraInfoDisplayData *UIDAtaPTR=_ptr->GetUIDataObj();
+		ExtraInfoDisplayData *UIDAtaPTR=_ActualMyDLLType->GetUIDataObj();
 		m_GroupREct.GetClientRect(&rect);
 		UIDAtaPTR->DisplayRect=rect;
 
-		_ptr->CreateUI(&m_GroupREct);
+		_ActualMyDLLType->CreateUI(&m_GroupREct);
 		//delete ptr;
 	}
 
@@ -190,19 +195,20 @@ void CMyDLGDlg::OnClose()
 	}
 	if(_DLLCREATOR)
 		delete _DLLCREATOR;
+
 	CDialogEx::OnClose();
 }
 
 
 void CMyDLGDlg::OnBnClickedButton2()
 {
-	if(_ptr)
+	if(_ActualMyDLLType)
 	{
-		ExtraInfoDisplayData *UIDAtaPTR=_ptr->GetUIDataObj();
+		ExtraInfoDisplayData *UIDAtaPTR=_ActualMyDLLType->GetUIDataObj();
 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp1_1"))));
 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp2_1"))));
 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeB")),CString(_T("Comp3_2"))));
-		_ptr->RefreshDLG();
+		_ActualMyDLLType->RefreshDLG();
 	}
 	// TODO: Add your control notification handler code here
 }

@@ -2,7 +2,7 @@
 #include "ComponentEtraInfoExport.h"
 #include "DLLUI_ExtraCompInfo.h"
 
-IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>*   CreatePluginObj()
+IDLLPluginInterface*   CreatePluginObj()
 {
 	return new  ExtraCompInfoCtrl();
 }

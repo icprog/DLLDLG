@@ -45,6 +45,9 @@
     <ClInclude Include="TemplateDLLLoader.h">
       <Filter>DLLLoader</Filter>
     </ClInclude>
+    <ClInclude Include="IDLLLoader.h">
+      <Filter>DLLLoader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyDLG.cpp">

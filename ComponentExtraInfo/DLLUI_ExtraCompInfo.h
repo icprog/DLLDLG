@@ -7,7 +7,7 @@
 #include "DLLUIEventInterface.h"
 #include "ComponentExtraInfoDLG.h"
 
-class ExtraCompInfoCtrl : public IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>
+class ExtraCompInfoCtrl : public UIDLL_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>
 {
 public:
 	ExtraCompInfoCtrl()

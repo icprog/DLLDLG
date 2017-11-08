@@ -3,16 +3,17 @@
 
 #include "DLLUIEventInterface.h"
 #include <afxwin.h>
+#include "DLLPluginInterface.h"
 
 template<class EventEnum,class UIDataObjPTR>
-class IDLLUI_Plugin
+class UIDLL_Plugin : public IDLLPluginInterface
 {
 public:
-	IDLLUI_Plugin()
+	UIDLL_Plugin()
 	{
 		_OBJ=new UIDataObjPTR();
 	}
-	virtual ~IDLLUI_Plugin() 
+	virtual ~UIDLL_Plugin() 
 	{
 		if(_OBJ)
 			delete _OBJ;

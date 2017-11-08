@@ -1,8 +1,14 @@
 #ifndef __TEMPLATE__DLL_LOADER__
 #define __TEMPLATE__DLL_LOADER__
 
-template<class DLLCLASS,class ClassCreationDef>
-class DLLLoader
+
+#include "IDLLLoader.h"
+
+class IDLLPluginInterface;
+
+typedef IDLLPluginInterface *(*IDLLPluginCreateor)();
+
+class DLLLoader : public  IDLLLoader
 {
 public:
 	DLLLoader(CString &DllName)
@@ -27,13 +33,13 @@ public:
 
 		if(hLibrary)
 		{
-			CTypeDef=(ClassCreationDef)GetProcAddress(hLibrary, _T("CreatePluginObj"));
+			CTypeDef=(IDLLPluginCreateor)GetProcAddress(hLibrary, _T("CreatePluginObj"));
 		}
 	}
 
-	virtual DLLCLASS GetDLLCLass()
+	virtual IDLLPluginInterface* GetDLLCLass()
 	{
-		DLLCLASS ret=NULL;
+		IDLLPluginInterface* ret=NULL;
 		if(CTypeDef)
 			ret=(CTypeDef)();
 		return ret;
@@ -44,7 +50,7 @@ public:
 		FreeLibrary(hLibrary);
 	}
 private:
-	ClassCreationDef CTypeDef;
+	IDLLPluginCreateor CTypeDef;
 	HINSTANCE hLibrary;
 };
 

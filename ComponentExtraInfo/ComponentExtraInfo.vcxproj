@@ -196,6 +196,7 @@
     <ClInclude Include="ComponentExtraInfo.h" />
     <ClInclude Include="ComponentExtraInfoDLG.h" />
     <ClInclude Include="DLGUIData.h" />
+    <ClInclude Include="DLLPluginInterface.h" />
     <ClInclude Include="DLLUIEventInterface.h" />
     <ClInclude Include="DLLUI_ExtraCompInfo.h" />
     <ClInclude Include="ExtraDisplayData.h" />
