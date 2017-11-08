@@ -198,7 +198,9 @@ void CMyDLGDlg::OnBnClickedButton2()
 	if(_ptr)
 	{
 		ExtraInfoDisplayData *UIDAtaPTR=_ptr->GetUIDataObj();
-		UIDAtaPTR->ListVec.push_back(new DispData());
+		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp1_1"))));
+		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp2_1"))));
+		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeB")),CString(_T("Comp3_2"))));
 		_ptr->RefreshDLG();
 	}
 	// TODO: Add your control notification handler code here
