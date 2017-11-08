@@ -53,6 +53,7 @@ CMyDLGDlg::CMyDLGDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CMyDLGDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	_DLLCREATOR=new DLLLoader<IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>*, PluginCreateor>(CString(_T("ComponentExtraInfo.dll")));
 	_ptr=NULL;
 }
 
@@ -163,7 +164,7 @@ void CMyDLGDlg::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
 
-	_DLLCREATOR=new DLLLoader<IDLLUI_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>*, PluginCreateor>(CString(_T("ComponentExtraInfo.dll")));
+
 	_ptr=_DLLCREATOR->GetDLLCLass();
 	if(_ptr)
 	{
