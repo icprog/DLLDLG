@@ -5,3 +5,5 @@ Release
 /*.opensdf
 ipch
 /*.suo
+/ComponentExtraInfo/*.aps
+*.aps

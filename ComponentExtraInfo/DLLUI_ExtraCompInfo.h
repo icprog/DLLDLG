@@ -32,6 +32,11 @@ public:
 	{
 		AFX_MANAGE_STATE(AfxGetStaticModuleState());
 		AdjustLaytout();
+		if(_DLG)
+		{
+			_DLG->RefreshUIData();
+		}
+		
 	}
 
 	virtual void AdjustLaytout()

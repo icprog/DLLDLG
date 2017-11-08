@@ -24,12 +24,24 @@ ComponentExtraInfoDLG::~ComponentExtraInfoDLG()
 
 void ComponentExtraInfoDLG::RefreshUIData()
 {
+	if(!_UIData)
+		return;
 
+	std::vector<DispData*> curData=_UIData->ListVec;
+	const size_t num_Data=curData.size();
+	
+	for(size_t i=0;i<num_Data;i++)
+	{
+		CString DISPITem;
+		DISPITem.Format(_T("%s___%s"),curData[i]->_ComponentTypeName,curData[i]->_ComponentDataName);
+		//m_ListBox.InsertItem(AddString(DISPITem));
+	}
 }
 
 void ComponentExtraInfoDLG::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIST2, m_ListBox);
 }
 
 

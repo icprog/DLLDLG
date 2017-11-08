@@ -3,6 +3,7 @@
 #include <map>
 #include "DLGUIData.h"
 #include "Resource.h"
+#include "afxwin.h"
 
 // ComponentExtraInfoDLG dialog
 
@@ -29,4 +30,5 @@ public:
 	void AdjustLayout(CRect & inputRect);
 	afx_msg void OnBnClickedButton1();
 
+	CListCtrl m_ListBox;
 };
