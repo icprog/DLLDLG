@@ -11,7 +11,7 @@ class ComponentExtraInfoDLG : public CDialogEx
 	DECLARE_DYNAMIC(ComponentExtraInfoDLG)
 
 public:
-	ComponentExtraInfoDLG(CWnd* pParent = NULL);   // standard constructor
+	ComponentExtraInfoDLG(CWnd* pParent ,ExtraInfoDisplayData* SyncDATA);   // standard constructor
 	virtual ~ComponentExtraInfoDLG();
 
 // Dialog Data
@@ -22,8 +22,10 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 private:
+	ExtraInfoDisplayData*  _UIData;
 	std::map<MFCTRL_ENUM,CWnd*> _MFCCtrlList;
 public:
+	void RefreshUIData();
 	void AdjustLayout(CRect & inputRect);
 	afx_msg void OnBnClickedButton1();
 

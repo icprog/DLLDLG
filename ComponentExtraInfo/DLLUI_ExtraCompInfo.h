@@ -13,7 +13,7 @@ public:
 	ExtraCompInfoCtrl()
 	{
 		AFX_MANAGE_STATE(AfxGetStaticModuleState());
-		_DLG=new ComponentExtraInfoDLG();
+		_DLG=new ComponentExtraInfoDLG(NULL,this->GetUIDataObj());
 		_Parent=NULL;
 	}
 

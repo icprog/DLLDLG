@@ -5,20 +5,26 @@
 #include "ComponentExtraInfo.h"
 #include "ComponentExtraInfoDLG.h"
 #include "afxdialogex.h"
+#include "DLGUIData.h"
 
 
 // ComponentExtraInfoDLG dialog
 
 IMPLEMENT_DYNAMIC(ComponentExtraInfoDLG, CDialogEx)
 
-ComponentExtraInfoDLG::ComponentExtraInfoDLG(CWnd* pParent /*=NULL*/)
+ComponentExtraInfoDLG::ComponentExtraInfoDLG(CWnd* pParent ,ExtraInfoDisplayData* SyncDATA)
 	: CDialogEx(ComponentExtraInfoDLG::IDD, pParent)
 {
-
+	_UIData=SyncDATA;
 }
 
 ComponentExtraInfoDLG::~ComponentExtraInfoDLG()
 {
+}
+
+void ComponentExtraInfoDLG::RefreshUIData()
+{
+
 }
 
 void ComponentExtraInfoDLG::DoDataExchange(CDataExchange* pDX)
