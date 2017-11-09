@@ -27,7 +27,7 @@ void ComponentExtraInfoDLG::RefreshUIData()
 	if(!_UIData)
 		return;
 
-	std::vector<DispData*> curData=_UIData->ListVec;
+	std::vector<DispData*> curData=_UIData->GetDisplayData();
 	const size_t num_Data=curData.size();
 	
 	for(size_t i=0;i<num_Data;i++)
@@ -54,6 +54,9 @@ END_MESSAGE_MAP()
 
 void ComponentExtraInfoDLG::AdjustLayout(CRect & inputRect)
 {
+	if(!GetSafeHwnd())
+		return;
+
 	SetWindowPos(&CWnd::wndTop,inputRect.left,inputRect.top,inputRect.Width(),inputRect.Height(),SWP_SHOWWINDOW);
 
 	RedrawWindow();

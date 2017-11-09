@@ -176,7 +176,7 @@ void CMyDLGDlg::OnBnClickedButton1()
 		CRect rect;
 		ExtraInfoDisplayData *UIDAtaPTR=_ActualMyDLLType->GetUIDataObj();
 		m_GroupREct.GetClientRect(&rect);
-		UIDAtaPTR->DisplayRect=rect;
+		UIDAtaPTR->SetClientRect(rect);
 
 		_ActualMyDLLType->CreateUI(&m_GroupREct);
 		//delete ptr;
@@ -205,9 +205,9 @@ void CMyDLGDlg::OnBnClickedButton2()
 	if(_ActualMyDLLType)
 	{
 		ExtraInfoDisplayData *UIDAtaPTR=_ActualMyDLLType->GetUIDataObj();
-		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp1_1"))));
-		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp2_1"))));
-		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeB")),CString(_T("Comp3_2"))));
+// 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp1_1"))));
+// 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeA")),CString(_T("Comp2_1"))));
+// 		UIDAtaPTR->ListVec.push_back(new DispData(CString(_T("TypeB")),CString(_T("Comp3_2"))));
 		_ActualMyDLLType->RefreshDLG();
 	}
 	// TODO: Add your control notification handler code here

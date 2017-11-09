@@ -46,7 +46,7 @@ public:
 		if(_DLG)
 		{
 			ExtraInfoDisplayData* UIOBJ=GetUIDataObj();
-			CRect curRect=UIOBJ->DisplayRect;
+			CRect curRect=UIOBJ->GetDisplayRect();
 			_DLG->AdjustLayout(curRect);
 		}
 	}
