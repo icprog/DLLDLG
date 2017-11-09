@@ -193,12 +193,14 @@
   <ItemGroup>
     <ClInclude Include="..\Interface\DLLPluginInterface.h" />
     <ClInclude Include="..\Interface\DLLUIEventInterface.h" />
+    <ClInclude Include="..\Interface\EventDispatcher.h" />
     <ClInclude Include="..\Interface\TIDLLUIPlugin.h" />
     <ClInclude Include="ComponentExtraInfo.h" />
     <ClInclude Include="ComponentExtraInfoDLG.h" />
     <ClInclude Include="DLLUI_ExtraCompInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ShareData\ComponentEtraInfoExport.h" />
+    <ClInclude Include="ShareData\ComponentExtraEvent.h" />
     <ClInclude Include="ShareData\DLGUIData.h" />
     <ClInclude Include="ShareData\ExtraDisplayData.h" />
     <ClInclude Include="stdafx.h" />

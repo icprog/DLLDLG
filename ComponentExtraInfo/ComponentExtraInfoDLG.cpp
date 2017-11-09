@@ -6,16 +6,18 @@
 #include "ComponentExtraInfoDLG.h"
 #include "afxdialogex.h"
 #include "ShareData\DLGUIData.h"
+#include "..\Interface\DLLUIEventInterface.h"
 
 
 // ComponentExtraInfoDLG dialog
 
 IMPLEMENT_DYNAMIC(ComponentExtraInfoDLG, CDialogEx)
 
-ComponentExtraInfoDLG::ComponentExtraInfoDLG(CWnd* pParent ,ExtraInfoDisplayData* SyncDATA)
+ComponentExtraInfoDLG::ComponentExtraInfoDLG(CWnd* pParent ,ExtraInfoDisplayData* SyncDATA, EventDispatcher<COMPEXTRA_EVENT> * EventCallBak)
 	: CDialogEx(ComponentExtraInfoDLG::IDD, pParent)
 {
 	_UIData=SyncDATA;
+	_EventCallBak=EventCallBak;
 }
 
 ComponentExtraInfoDLG::~ComponentExtraInfoDLG()
@@ -65,4 +67,17 @@ void ComponentExtraInfoDLG::AdjustLayout(CRect & inputRect)
 void ComponentExtraInfoDLG::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
+	IDLLUIEvent*  pCurCalbak=GetCalBakEvent(COMPEXTRA_EVENT_CLICK_REFRESH_BTN);
+	if(pCurCalbak)
+		pCurCalbak->OnEvent();
+}
+
+IDLLUIEvent*  ComponentExtraInfoDLG::GetCalBakEvent(COMPEXTRA_EVENT  input)
+{
+	IDLLUIEvent* ret=NULL;
+
+	if(_EventCallBak)
+		ret=_EventCallBak->GetEvent(input);
+
+	return ret;
 }

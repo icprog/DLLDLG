@@ -86,6 +86,12 @@
     <ClInclude Include="..\Interface\DLLUIEventInterface.h">
       <Filter>DLLEvents</Filter>
     </ClInclude>
+    <ClInclude Include="ShareData\ComponentExtraEvent.h">
+      <Filter>DLLEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Interface\EventDispatcher.h">
+      <Filter>DLLEvents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ComponentExtraInfo.rc">

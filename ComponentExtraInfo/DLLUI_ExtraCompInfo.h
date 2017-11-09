@@ -5,13 +5,13 @@
 #include "ShareData\DLGUIData.h"
 #include "..\Interface\TIDLLUIPlugin.h"
 
-class ExtraCompInfoCtrl : public UIDLL_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>
+class ExtraCompInfoCtrl : public UIDLL_Plugin<COMPEXTRA_EVENT,ExtraInfoDisplayData>
 {
 public:
 	ExtraCompInfoCtrl()
 	{
 		AFX_MANAGE_STATE(AfxGetStaticModuleState());
-		_DLG=new ComponentExtraInfoDLG(NULL,this->GetUIDataObj());
+		_DLG=new ComponentExtraInfoDLG(NULL,this->GetUIDataObj(),this->GetEventHandler());
 		_Parent=NULL;
 	}
 
@@ -20,10 +20,6 @@ public:
 		AFX_MANAGE_STATE(AfxGetStaticModuleState());
 		if(_DLG)
 			delete _DLG;
-	}
-	virtual void AddEventCtrl(MFCTRL_ENUM input,IDLLUIEvent * eventHandler)
-	{
-		AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	}
 
 	virtual void RefreshDLG()
