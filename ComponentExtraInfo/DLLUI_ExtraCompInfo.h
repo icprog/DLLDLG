@@ -1,11 +1,9 @@
 #ifndef __DLL_UI_EXTRA_COMP_INFO_CTRL__
 #define __DLL_UI_EXTRA_COMP_INFO_CTRL__
 
-
-#include "TIDLLUIPlugin.h"
-#include "DLGUIData.h"
-#include "DLLUIEventInterface.h"
 #include "ComponentExtraInfoDLG.h"
+#include "ShareData\DLGUIData.h"
+#include "..\Interface\TIDLLUIPlugin.h"
 
 class ExtraCompInfoCtrl : public UIDLL_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>
 {

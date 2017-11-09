@@ -5,7 +5,7 @@
 #include "ComponentExtraInfo.h"
 #include "ComponentExtraInfoDLG.h"
 #include "afxdialogex.h"
-#include "DLGUIData.h"
+#include "ShareData\DLGUIData.h"
 
 
 // ComponentExtraInfoDLG dialog

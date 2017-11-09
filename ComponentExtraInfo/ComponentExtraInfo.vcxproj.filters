@@ -16,14 +16,14 @@
     <Filter Include="UI">
       <UniqueIdentifier>{1778ab7b-12d1-47c3-84eb-51257f296201}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{416514c2-a2eb-41c6-b160-a99570775a5a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DLLEvents">
       <UniqueIdentifier>{dc5348b3-def2-4c5d-8189-a356f9ef74b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="ExportFUN">
       <UniqueIdentifier>{75e069f9-428b-4fff-a3a0-eb9560da82ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShareData">
+      <UniqueIdentifier>{416514c2-a2eb-41c6-b160-a99570775a5a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,9 +45,6 @@
     <ClCompile Include="ComponentExtraInfoDLG.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="DLGUIData.cpp">
-      <Filter>Data</Filter>
-    </ClCompile>
     <ClCompile Include="ComponentEtraInfoExport.cpp">
       <Filter>ExportFUN</Filter>
     </ClCompile>
@@ -65,29 +62,29 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExtraDisplayData.h">
-      <Filter>Data</Filter>
-    </ClInclude>
-    <ClInclude Include="DLLUIEventInterface.h">
-      <Filter>DLLEvents</Filter>
-    </ClInclude>
     <ClInclude Include="ComponentExtraInfoDLG.h">
       <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="DLGUIData.h">
-      <Filter>Data</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentEtraInfoExport.h">
-      <Filter>ExportFUN</Filter>
-    </ClInclude>
-    <ClInclude Include="TIDLLUIPlugin.h">
-      <Filter>ExportFUN</Filter>
     </ClInclude>
     <ClInclude Include="DLLUI_ExtraCompInfo.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="DLLPluginInterface.h">
+    <ClInclude Include="ShareData\ComponentEtraInfoExport.h">
       <Filter>ExportFUN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Interface\TIDLLUIPlugin.h">
+      <Filter>ExportFUN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Interface\DLLPluginInterface.h">
+      <Filter>ExportFUN</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareData\DLGUIData.h">
+      <Filter>ShareData</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareData\ExtraDisplayData.h">
+      <Filter>ShareData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Interface\DLLUIEventInterface.h">
+      <Filter>DLLEvents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

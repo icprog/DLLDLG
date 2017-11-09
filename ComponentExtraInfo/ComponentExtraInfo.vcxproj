@@ -183,7 +183,6 @@
     <ClCompile Include="ComponentEtraInfoExport.cpp" />
     <ClCompile Include="ComponentExtraInfo.cpp" />
     <ClCompile Include="ComponentExtraInfoDLG.cpp" />
-    <ClCompile Include="DLGUIData.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -192,18 +191,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ComponentEtraInfoExport.h" />
+    <ClInclude Include="..\Interface\DLLPluginInterface.h" />
+    <ClInclude Include="..\Interface\DLLUIEventInterface.h" />
+    <ClInclude Include="..\Interface\TIDLLUIPlugin.h" />
     <ClInclude Include="ComponentExtraInfo.h" />
     <ClInclude Include="ComponentExtraInfoDLG.h" />
-    <ClInclude Include="DLGUIData.h" />
-    <ClInclude Include="DLLPluginInterface.h" />
-    <ClInclude Include="DLLUIEventInterface.h" />
     <ClInclude Include="DLLUI_ExtraCompInfo.h" />
-    <ClInclude Include="ExtraDisplayData.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ShareData\ComponentEtraInfoExport.h" />
+    <ClInclude Include="ShareData\DLGUIData.h" />
+    <ClInclude Include="ShareData\ExtraDisplayData.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TIDLLUIPlugin.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ComponentExtraInfo.rc" />

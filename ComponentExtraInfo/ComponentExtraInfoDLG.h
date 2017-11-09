@@ -1,12 +1,12 @@
 #pragma once
 
 #include <map>
-#include "DLGUIData.h"
 #include "Resource.h"
 #include "afxwin.h"
+#include "ShareData\DLGUIData.h"
 
 // ComponentExtraInfoDLG dialog
-
+class ExtraInfoDisplayData;
 class ComponentExtraInfoDLG : public CDialogEx
 {
 	DECLARE_DYNAMIC(ComponentExtraInfoDLG)
