@@ -4,8 +4,8 @@
 
 #pragma once
 #include "afxwin.h"
-#include "..\ComponentExtraInfo\DLGUIData.h"
-#include "..\ComponentExtraInfo\TIDLLUIPlugin.h"
+#include "..\ComponentExtraInfo\ShareData\DLGUIData.h"
+#include "..\Interface\TIDLLUIPlugin.h"
 
 typedef UIDLL_Plugin<MFCTRL_ENUM,ExtraInfoDisplayData>  MyDLLType;
 
