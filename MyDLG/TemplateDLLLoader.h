@@ -34,7 +34,6 @@ public:
 
 		if(hLibrary)
 		{
-			void * ptr=GetProcAddress(hLibrary, _T("CreatePluginObj"));
 			CTypeDef=(IDLLPluginCreateor)GetProcAddress(hLibrary, _T("CreatePluginObj"));
 		}
 	}
