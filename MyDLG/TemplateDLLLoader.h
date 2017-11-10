@@ -3,6 +3,7 @@
 
 
 #include "IDLLLoader.h"
+#include "..\Interface\DLLPluginInterface.h"
 
 class IDLLPluginInterface;
 
@@ -28,11 +29,12 @@ public:
 
 
 
-		CString dllpath=DllName;
+		CString dllpath=PathString+CString(_T("/"))+DllName;
 		hLibrary =  LoadLibrary(dllpath);
 
 		if(hLibrary)
 		{
+			void * ptr=GetProcAddress(hLibrary, _T("CreatePluginObj"));
 			CTypeDef=(IDLLPluginCreateor)GetProcAddress(hLibrary, _T("CreatePluginObj"));
 		}
 	}

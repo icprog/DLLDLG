@@ -1,7 +1,9 @@
 #ifndef __COMP_EXTRA_INFO_EXPORT__
 #define __COMP_EXTRA_INFO_EXPORT__
 
-#include "DLLPluginInterface.h"
+
+#include "..\..\Interface\DLLPluginInterface.h"
+
 
 #ifdef COMPEXTRAIFNO_EXPORTS
 #define DLLCATPREFIX __declspec(dllexport)
